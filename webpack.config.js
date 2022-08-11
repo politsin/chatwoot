@@ -6,8 +6,9 @@ const crypto = require("crypto");
 const crypto_orig_createHash = crypto.createHash;
 crypto.createHash = algorithm =>
   crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
-const config = {
+const configCustom = {
   mode: isDevMode ? "development" : "production"
 };
-// module.exports = config;
-module.exports = environment.toWebpackConfig();
+const config = environment.toWebpackConfig();
+
+module.exports = config;
