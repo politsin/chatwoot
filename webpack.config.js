@@ -9,6 +9,10 @@ crypto.createHash = algorithm =>
 const configCustom = {
   mode: isDevMode ? "development" : "production"
 };
+// Config from @rails/webpacker
 const config = environment.toWebpackConfig();
+
+const PUBLIC_PATH = "/themes/chatwoot/public/packs/";
+config.output.publicPath = PUBLIC_PATH;
 
 module.exports = config;
